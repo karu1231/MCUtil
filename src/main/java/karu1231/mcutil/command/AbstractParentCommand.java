@@ -1,8 +1,8 @@
-package karu1231.testpl.command;
+package karu1231.mcutil.command;
 
 import com.google.common.collect.ImmutableList;
-import karu1231.testpl.message.ErrorMessage;
-import karu1231.testpl.message.Message;
+import karu1231.mcutil.message.ErrorMessage;
+import karu1231.mcutil.message.Message;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;

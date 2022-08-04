@@ -1,4 +1,4 @@
-package karu1231.testpl.message;
+package karu1231.mcutil.message;
 
 public enum ErrorMessage {
 	args("引数が不適切です。"),

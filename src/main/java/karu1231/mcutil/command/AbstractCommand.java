@@ -1,4 +1,4 @@
-package karu1231.testpl.command;
+package karu1231.mcutil.command;
 
 import com.google.common.collect.ImmutableList;
 import org.bukkit.command.*;

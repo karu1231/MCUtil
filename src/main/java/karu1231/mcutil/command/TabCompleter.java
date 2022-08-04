@@ -1,4 +1,4 @@
-package karu1231.testpl.command;
+package karu1231.mcutil.command;
 
 import java.util.ArrayList;
 import java.util.List;

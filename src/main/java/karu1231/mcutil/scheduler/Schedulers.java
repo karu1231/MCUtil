@@ -1,10 +1,9 @@
-package karu1231.testpl.scheduler;
+package karu1231.mcutil.scheduler;
 
-import karu1231.testpl.privateGit.TestPL;
+import karu1231.mcutil.privateGit.TestPL;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
-import org.bukkit.scheduler.BukkitTask;
 
 public class Schedulers {
 

@@ -1,6 +1,6 @@
-package karu1231.testpl.item;
+package karu1231.mcutil.item;
 
-import karu1231.testpl.privateGit.TestPL;
+import karu1231.mcutil.privateGit.TestPL;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
