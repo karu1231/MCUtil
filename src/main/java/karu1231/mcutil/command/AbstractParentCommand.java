@@ -26,14 +26,8 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 		this.parent_start = parent_start;
 	}
 
-	/**
-	 * from {@link AbstractCommand}
-	 */
 	public abstract boolean isCanExecute(CommandSender sender);
-
-	@Override
-	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String commandLabel, String[] args) {
-
+	protected boolean onCommand_execute(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args){
 		if(args.length == parent_start) {
 
 			Message.Error(sender, ErrorMessage.args);
@@ -48,8 +42,8 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 					Message.Error(sender, ErrorMessage.noperm);
 					return true;
 				}
-
-				command.onCommand(sender, cmd, commandLabel, args);
+				//権限チェックして、OKだったら実行後「returnしないといけない(何個もコマンドが実行される)」ので、execute直接呼び出し
+				command.onCommand_execute(sender, cmd, label, args);
 				return true;
 			}
 

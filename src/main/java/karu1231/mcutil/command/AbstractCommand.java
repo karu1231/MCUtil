@@ -1,6 +1,8 @@
 package karu1231.mcutil.command;
 
 import com.google.common.collect.ImmutableList;
+import karu1231.mcutil.message.ErrorMessage;
+import karu1231.mcutil.message.Message;
 import org.bukkit.command.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -20,7 +22,16 @@ public abstract class AbstractCommand implements TabExecutor {
 
 	public abstract boolean isCanExecute(CommandSender sender);
 
-	public abstract boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args);
+	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args){
+		if(isCanExecute(sender))
+			return onCommand_execute(sender, command, label, args);
+		else{
+			Message.Error(sender, ErrorMessage.noperm);
+			return true;
+		}
+	};
+
+	protected abstract boolean onCommand_execute(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args);
 
 	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args){
 		return ImmutableList.of();
