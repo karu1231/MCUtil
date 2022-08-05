@@ -40,13 +40,7 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 		for(AbstractCommand command:subcommands) {
 			if(command.getLabel().equalsIgnoreCase(args[parent_start])) {
 
-				if(!command.isCanExecute(sender)) {
-
-					Message.Error(sender, ErrorMessage.noperm);
-					return true;
-				}
-				//権限チェックして、OKだったら実行後「returnしないといけない(何個もコマンドが実行される)」ので、execute直接呼び出し
-				command.onCommand_execute(sender, cmd, label, args);
+				command.onCommand(sender, cmd, label, args);
 				return true;
 			}
 
