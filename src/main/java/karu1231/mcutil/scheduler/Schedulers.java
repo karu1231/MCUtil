@@ -1,6 +1,6 @@
 package karu1231.mcutil.scheduler;
 
-import karu1231.mcutil.privateGit.TestPL;
+import karu1231.mcutil.MCUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
@@ -8,7 +8,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 public class Schedulers {
 
 	private static final BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-	private static final Plugin plugin = TestPL.plugin;
+	private static final Plugin plugin = MCUtil.plugin;
 
 	/* タスクが作られたすぐ次のtickで起動。 同期に使う。 */
 	public static int runTask() {

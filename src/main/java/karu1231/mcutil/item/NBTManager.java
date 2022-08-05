@@ -1,6 +1,6 @@
 package karu1231.mcutil.item;
 
-import karu1231.mcutil.privateGit.TestPL;
+import karu1231.mcutil.MCUtil;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class NBTManager {
 
-	private static final Plugin plugin = TestPL.plugin;
+	private static final Plugin plugin = MCUtil.plugin;
 
 	public static @NotNull <T, Z> ItemStack addNBT(@NotNull ItemStack stack, @NotNull String key, @NotNull PersistentDataType<T,Z> type,Z value){
 		return addNBT(stack,new NamespacedKey(plugin,key),type,value);
