@@ -5,6 +5,7 @@ import karu1231.mcutil.message.ErrorMessage;
 import karu1231.mcutil.message.Message;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -15,6 +16,16 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 	public final ImmutableList<AbstractCommand> subcommands;
 
 	public final int parent_start;
+
+	public AbstractParentCommand(JavaPlugin plugin, String name, ImmutableList<AbstractCommand> subcommands) {
+		this(plugin,name,subcommands,0);
+	}
+	
+	public AbstractParentCommand(JavaPlugin plugin,String name, ImmutableList<AbstractCommand> subcommands, int parent_start) {
+		super(plugin,name);
+		this.subcommands = subcommands;
+		this.parent_start = parent_start;
+	}
 
 	public AbstractParentCommand(String name, ImmutableList<AbstractCommand> subcommands) {
 		this(name,subcommands,0);
