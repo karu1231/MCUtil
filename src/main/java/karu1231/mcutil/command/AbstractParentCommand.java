@@ -32,8 +32,8 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 			throw new RuntimeException(String.format("Too short args given to parentcommand(/%s).",label));
 
 		if(args.length == parent_start) {
-
-			Message.Error(sender, ErrorMessage.args);
+			if(!onCommand_simple(sender, cmd, label, args))
+				Message.Error(sender, ErrorMessage.args);
 			return true;
 		}
 
@@ -54,6 +54,10 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 
 		Message.Error(sender, ErrorMessage.args);
 		return true;
+	}
+
+	protected boolean onCommand_simple(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args){
+		return false;
 	}
 
 	@Override
