@@ -6,6 +6,7 @@ import karu1231.mcutil.message.Message;
 import org.bukkit.command.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractCommand implements TabExecutor {
@@ -34,6 +35,6 @@ public abstract class AbstractCommand implements TabExecutor {
 	protected abstract boolean onCommand_execute(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args);
 
 	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args){
-		return ImmutableList.of();
+		return new ArrayList<>();
 	}
 }
