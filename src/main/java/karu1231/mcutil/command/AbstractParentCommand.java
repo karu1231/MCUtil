@@ -28,6 +28,9 @@ public abstract class AbstractParentCommand extends AbstractCommand {
 
 	public abstract boolean isCanExecute(CommandSender sender);
 	protected boolean onCommand_execute(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args){
+		if(args.length < parent_start)
+			throw new RuntimeException(String.format("Too short args given to parentcommand(/%s).",label));
+
 		if(args.length == parent_start) {
 
 			Message.Error(sender, ErrorMessage.args);
