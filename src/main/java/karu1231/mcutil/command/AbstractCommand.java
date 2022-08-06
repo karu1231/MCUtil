@@ -29,7 +29,9 @@ public abstract class AbstractCommand implements TabExecutor {
 		return this.name;
 	}
 
-	public abstract boolean isCanExecute(CommandSender sender);
+	public boolean isCanExecute(CommandSender sender){
+		return true;
+	};
 
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args){
 		if(isCanExecute(sender))
